@@ -1,0 +1,14 @@
+Java Collections Framework is a collection of interfaces and classes which helps in
+ storing and processing the data efficiently. This has several useful classess which
+ have tons of functions which makes a programmer task super easy.
+
+Main types of collections:
+1) List - is an ordered collection(Sometimes called a sequence). Lists may contain duplicate elements
+		ArrayList, LinkedList, Vector
+
+2)Set - is a collection that cannot contain the duplicate elements.However it makes no guarantee
+	concerning the order of iteration.
+		HashSet, LinkedHashSet, TreeSet
+
+3)Map - is an object that maps keys to values. A map cannot contain duplicates.
+	HashMap, TreeMap, LinkeHashMap

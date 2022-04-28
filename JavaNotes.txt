@@ -1,0 +1,196 @@
+Method:
+
+ReturnType nameOfMethod(){
+	//Body of the method;
+}
+
+
+Datatypes:
+
+Byte - 1byte
+Short - 2 Bytes
+Integer - 4 bytes
+Long - 8 Bytes
+
+Java Streams:
+
+These java functions can be used to do the aggregate functions.
+ArrayList<String> names=new ArrayList<String>();
+	names.add("Lenin");
+	names.add("Lovely");
+	names.add("Love");
+	names.add("Ishq");
+	names.add("Pyaar");
+	
+	long c=names.stream().filter(s->s.startsWith("L")).count();
+
+
+Adding two lists with streams:
+
+ArrayList<String> names=new ArrayList<String>();
+	names.add("Lenin");
+	names.add("Lovely");
+	names.add("Love");
+	names.add("Ishq");
+	names.add("Pyaar");
+	ArrayList<String> names2=new ArrayList<String>();
+	names2.add("Lafoot");
+	names2.add("Lovely");
+	names2.add("Lenin");
+	names2.add("Ishq");
+	names2.add("Hello");
+	
+	names.stream().filter(s->s.startsWith("L")).map(s->s.toLowerCase()).forEach(s-> System.out.println(s));
+	names2.stream().filter(s->s.startsWith("L")).map(s->s.toLowerCase()).forEach(s-> System.out.println(s));
+	Stream <String> newStream=Stream.concat(names.stream(), names2.stream());
+	newStream.sorted().forEach(s->System.out.println(s));
+
+Sort and get unique and particular index:
+
+	ArrayList<String> names=new ArrayList<String>();
+	names.add("Lenin");
+	names.add("Lovely");
+	names.add("Love");
+	names.add("Ishq");
+	names.add("Pyaar");
+	
+	
+	names.stream().filter(s->s.startsWith("L")).map(s->s.toLowerCase()).forEach(s-> System.out.println(s));
+	List <String> sortedNames=names.stream().distinct().sorted().collect(Collectors.toList());
+	System.out.println(sortedNames.get(3));;
+	}
+
+
+Abstraction:
+
+It is a data hiding process. Showing only essential details .
+Abstract is the keyword to be used. To use these classses we should use extends keyword .
+
+Abstract Class:
+We can instantiate these classes, but we can use the abstract methods we have to inherit.
+These classes can have methods with body or without body. But the methods without body has to be a abstract modifier.
+
+Abstract Method:
+can only be used in an abstract class, and it does not have a body. The body is provided by the subclass (inherited from).
+
+Interfaces:
+
+It is a 100% abstraction class. i.e., we can only have methods without the body. 
+
+
+
+Inheritence:
+
+By name it inherits the methods of a class to another class i.e., child class inherits parent class.
+
+we have to use extends keyword.
+
+child class will have the access to all parent class methods when inherited. 
+
+childclass cc = new childclass();// this will have all the capabilities of its own and parents as it has inherited parent class .
+
+parentclass cc = new childclass();//this will have the capabilites of only parent class.
+
+
+Constructor:
+
+Constructor is a special method with no return type. The constructor of class is called when an object is created for the class.
+
+Though it is a special method, overriding is not possible. But overloading is possible.
+
+When a constructor is created in a class, it will run whenever the class object is created. And if the constructor requires parameter, then we have to pass the parameters while calling it.
+
+We can have multiple constructors but we can only call one constructor when an object is created. Constructor name should be same as class name.
+
+If we have no constructor created in a class, java compiler will create a default constructor with empty body.
+
+
+
+Access Modifier:
+
+Default access can be accessed outside of the package.
+
+Public can be accessed anywhere we want to use.
+
+Private can only be accessed within the class. 
+
+Protected can only be used in child class where the parent class is inherited.
+
+
+
+Java List:
+
+List extends collections class.
+
+List in Java provides the facility to maintain the ordered collection.
+ It contains the index-based methods to insert, update, delete and search the elements. 
+It can have the duplicate elements also. We can also store the null elements in the list.
+
+The List interface is found in the java.util package and inherits the Collection interface.
+
+The implementation classes of List interface are ArrayList, LinkedList, Stack and Vector. 
+The ArrayList and LinkedList are widely used in Java programming.
+
+
+The important points about Java LinkedList are:
+
+Java LinkedList class can contain duplicate elements.
+Java LinkedList class maintains insertion order.
+Java LinkedList class is non synchronized.
+In Java LinkedList class, manipulation is fast because no shifting needs to occur.
+Java LinkedList class can be used as a list, stack or queue.
+
+SET:
+
+A Set is a Collection that cannot contain duplicate elements. It models the mathematical set abstraction.
+
+The important points about Java HashSet class are:
+
+HashSet stores the elements by using a mechanism called hashing.
+HashSet contains unique elements only.
+HashSet allows null value.
+HashSet class is non synchronized.
+HashSet doesn't maintain the insertion order. Here, elements are inserted on the basis of their hashcode.
+HashSet is the best approach for search operations.
+The initial default capacity of HashSet is 16, and the load factor is 0.75.
+
+
+The important points about Java LinkedHashSet class are:
+
+Java LinkedHashSet class contains unique elements only like HashSet.
+Java LinkedHashSet class provides all optional set operation and permits null elements.
+Java LinkedHashSet class is non synchronized.
+Java LinkedHashSet class maintains insertion order.
+
+The important points about Java TreeSet class are:
+
+Java TreeSet class contains unique elements only like HashSet.
+Java TreeSet class access and retrieval times are quiet fast.
+Java TreeSet class doesn't allow null element.
+Java TreeSet class is non synchronized.
+Java TreeSet class maintains ascending order.
+
+Map:
+
+Map takes keys and values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

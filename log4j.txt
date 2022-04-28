@@ -1,0 +1,59 @@
+download the log4j jar and add it to the project path.
+
+//we have to inform log4j about the class we are using
+
+private static Logger log=LogManager.getLogger(demo.class.getName());--> demo here is a class name
+
+we have to configure the log4j configuration file otherwise we don't see all the logs but only the error logs.
+
+we have two main xml tags in configuration file, appenders and loggers
+
+Appenders will have the details of where to store/print logs. Console/File
+Appenders will also have pattern of the logs should be logged.
+
+Loggers will have what type of logs to be printed. error/trace.
+
+After creating a xml file we have to add it to the build path.
+->project->build path ->source
+
+
+
+
+When to use log4j methods based on given scenarios
+Use log. Error() to log when elements are not displayed in the page or if any validations fail
+
+Use Log. Debug()
+
+When each Selenium action is performed like click, SendKeys, getText()
+
+Use log.info()
+
+When operation is successfully completed ex: After loading page, or after any successful validations
+
+It’s just counterpart to log. Error()
+
+
+
+
+Sample XML file:
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+       <Properties>
+<Property name="basePath">./logs</Property>
+</Properties>
+ 
+  <Appenders>
+      <RollingFile name="File" fileName="${basePath}/prints.log" filePattern="${basePath}/prints-%d{yyyy-MM-dd}.log">
+     <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+      <SizeBasedTriggeringPolicy size="500" />
+          </RollingFile>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </Console>
+  </Appenders>
+  <Loggers>
+    <Root level="trace">
+      <AppenderRef ref="File"/>
+    </Root>
+  </Loggers>
+</Configuration>

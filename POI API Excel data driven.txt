@@ -1,0 +1,17 @@
+Apache POI is an excel accessing library to read or write file.
+
+Add POI jar to the class build path.
+
+FileInputStream fis = new FileInputStream("file Location in the system");
+XSSFWorkbook workbook = new XSSFWorkbook(fis); //we have to create an object for XSSFWorkbook to access the file
+int sheets = workbook.getNumberofSheets(); //this gets numbor of sheets in an excel
+
+XSSFSheet sheet = workbook.getSheetAt(i); //now sheet object holds the data of the sheet in excel
+
+//by default the pointer will be at first row.
+
+<Iterator> rows=sheet.iterator();//iterator helps to move to next
+Row firstrow = rows.next(); //Row holds the data of the respective row
+
+Iterator<cell>cellcontent = firstrow.cellIterator();
+

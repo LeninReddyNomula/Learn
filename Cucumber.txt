@@ -1,0 +1,123 @@
+Cucumber BDD testing needs 3 files:
+1) Feature file : which has the details of testcases with Given, When and Then keywords
+2) stepDefinition file: this file will have the methods with the code to execute
+3) testRunner file: this will be used to run the script.
+
+
+Ex: Feature file
+#Author: your.email@your.domain.com
+#Keywords Summary :
+#Feature: List of scenarios.
+#Scenario: Business rule through list of steps with arguments.
+#Given: Some precondition step
+#When: Some key actions
+#Then: To observe outcomes or validation
+#And,But: To enumerate more Given,When,Then steps
+#Scenario Outline: List of steps for data-driven as an Examples and <placeholder>
+#Examples: Container for s table
+#Background: List of steps run before each of the scenarios
+#""" (Doc Strings)
+#| (Data Tables)
+#@ (Tags/Labels):To group Scenarios
+#<> (placeholder)
+#""
+## (Comments)
+#Sample Feature Definition Template
+@tag
+Feature: Title of your feature
+  I want to use this template for my feature file
+
+  @tag1
+  Scenario: Title of your scenario
+    Given I want to write a step with precondition
+    And some other precondition
+    When I complete action
+    And some other action
+    And yet another action
+    Then I validate the outcomes
+    And check more outcomes
+
+  @tag2
+  Scenario Outline: Title of your scenario outline
+    Given I want to write a step with <name>
+    When I check for the <value> in step
+    Then I verify the <status> in step
+
+    Examples: 
+      | name  | value | status  |
+      | name1 |     5 | success |
+      | name2 |     7 | Fail    |
+
+Ex: step Definition file
+package stepDefinitions;
+
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class stepDefinition {
+	
+	
+
+	
+	@Given("user is to login into the application")
+	public void user_is_to_login_into_the_application() {
+	    // Write code here that turns the phrase above into concrete actions
+	   System.out.println("PASS");
+	}
+	@When("User login in to the appllication")
+	public void user_login_in_to_the_appllication() {
+	    // Write code here that turns the phrase above into concrete actions
+		 System.out.println("PASS");
+	}
+	@Then("User should be logged in")
+	public void user_should_be_logged_in() {
+	    // Write code here that turns the phrase above into concrete actions
+		 System.out.println("PASS");
+	}
+	@And("user should see homepage")
+	public void user_should_see_homepage() {
+	    // Write code here that turns the phrase above into concrete actions
+		 System.out.println("PASS");
+	}
+	
+
+	@Given("User checkin homepage")
+	public void user_checkin_homepage() {
+	    // Write code here that turns the phrase above into concrete actions
+	   System.out.println("Landed");
+	}
+	@When("User should login with {string} and {string}")
+	public void user_should_login_with_and(String string, String string2) {
+	    // Write code here that turns the phrase above into concrete actions
+	    System.out.println(string);
+	    System.out.println(string2);
+	}
+	@Then("Homepage is landed")
+	public void homepage_is_landed() {
+	    // Write code here that turns the phrase above into concrete actions
+	    System.out.println("pass");
+	}
+	@Then("homepage displayed {string}")
+	public void homepage_displayed(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+		System.out.println(string);
+	}
+}
+
+Ex: testRunner file:
+package cucumberRunnerOptions;
+
+import org.junit.runner.RunWith;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(features="src/test/java/Feature",glue={"stepDefinitions"})
+
+public class TestRunner {
+
+}
+
